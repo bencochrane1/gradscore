@@ -1,0 +1,89 @@
+
+
+<h1>Student assessment details for <%= @student.first_name %> <%= @student.last_name %></h1>
+
+
+<table class="responsive">
+  <thead>
+    <tr>
+      <th width="20%">First Name</th>
+      <th width="20%">Last Name</th>
+      <th width="20%">Assessment Date</th>
+      <th width="20%">Gender</th>
+      <th width="20%">Business Unit</th>
+      <th width="20%">Score</th>
+      <th width="20%"> </th>
+      <th width="20%"> </th>
+      
+    </tr>
+  </thead>
+  <tbody>
+	    <tr>
+	      <td><%= @student.first_name %></td>
+	      <td><%= @student.last_name %></td>
+	      <td><%= @student.assessment_date %></td>
+	      <td><%= @student.gender %></td>
+	      <td><%= @student.business_unit %></td>
+	      <td><%= [@student.score_1, @student.score_2, @student.score_3, @student.score_4].inject{ |sum, el| sum + el }.to_f / [@student.score_1, @student.score_2, @student.score_3, @student.score_4].size %></td>
+	      <td><%= link_to 'Edit', edit_student_path(@student) %></td>
+	      <td><%= link_to 'Delete', student_path(@student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    </tr>
+  </tbody>
+</table>
+
+
+<%= form_for @student do |f| %>
+
+<br/>
+<fieldset>
+	<legend><h3>Activity 1: Group Discussion</h3></legend>
+	<h4>This activity shows the students ability to discuss topics in a group setting.</h4><br/>
+	<div class="large-6 columns">
+		<table class="responsive">
+			<tbody height="50%">
+				<tr>
+					<th width="20%">Observations about <%= @student.first_name %></th>
+				</tr>
+				<tr>
+					<td><%= @student.observation %></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="large-6 columns">
+		<table class="responsive">
+		  <tbody>
+		    <tr>
+		      <th width="90%">Capability</th>
+		      <th width="50%", style="text-align:center;">Score</th>
+		    </tr>
+		    <tr>
+		      <td>The student speaks confidently with their peers.</td>
+		      <td style="text-align:center;"><%= @student.score_1 %></td>
+
+		    </tr>
+		    <tr>
+		      <td>The student can voice their own opinions.</td>
+					<td style="text-align:center;"><%= @student.score_2 %></td>
+		    </tr>
+		    <tr>
+		      <td>The student lets other speak in the group.</td>
+		      <td style="text-align:center;"><%= @student.score_3 %></td>
+		    </tr>
+		    <tr>
+		      <td>The student is willing to change their view on new information.</td>
+		      <td style="text-align:center;"><%= @student.score_4 %></td>
+		    </tr>
+		    <tr>
+		      <td>ACTIVITY SCORE</td>
+		      <td style="text-align:center;"><%= [@student.score_1, @student.score_2, @student.score_3, @student.score_4].inject{ |sum, el| sum + el }.to_f / [@student.score_1, @student.score_2, @student.score_3, @student.score_4].size %> </td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>	
+</fieldset>
+<%= link_to 'Edit', edit_student_path(@student), class: "button" %> or <%= link_to 'Back', students_path %>
+<% end %>
+
+
+

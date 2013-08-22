@@ -1,0 +1,20 @@
+<h2>Previous Grad Assessments</h2><br/>
+
+<%= form_tag search_path do %>
+	<div class="panel">
+		<p>Search for a Graduate previously assessed:</p>
+		<div class="row collapse">
+			<%= text_field_tag 'search' %>
+			<%= submit_tag 'Search', class: "postfix button expand" %>
+		</div>
+	</div>
+<% end %>
+
+
+<%= link_to 'Assess a New Student', new_student_path, class: "button" %>
+<br/><br/>
+
+<%= render 'student_list' %>
+
+
+

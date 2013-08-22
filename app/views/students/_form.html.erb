@@ -1,0 +1,110 @@
+
+<% if @student.errors.any? %>
+
+<div class='errors'>
+	<p>Woops, lets fix these things up:</p>
+	<ul style="list-style:none">
+		<% @student.errors.full_messages.each do |message| %>
+			<li><span class="round alert label"><%= message %></span></li>
+		<% end %>
+	</ul>
+</div>
+
+<% end %>
+
+<%= form_for @student do |f| %>
+
+	<fieldset>
+		<legend>Student Details: <%= @student.first_name %> <%= @student.last_name %></legend>
+			<div>
+				<div class="small-2 large-4 columns">
+					<%= f.label :first_name %>
+					<%= f.text_field :first_name %>
+				</div>
+
+				<div class="small-4 large-4 columns">
+					<%= f.label :last_name %>
+					<%= f.text_field :last_name %>
+				</div>
+
+				<div class="small-6 large-4 columns">
+					<%= f.label :email %>
+					<%= f.text_field :email, placeholder: "student@example.com" %>
+				</div>
+			</div>
+
+
+			<div>
+				<div class="small-2 large-4 columns">
+					<%= f.label :assessment_date %>
+					<%= f.text_field :assessment_date, placeholder: "15/04/2013" %>
+				</div>
+
+				<div class="small-4 large-4 columns">
+					<%= f.label :gender %>
+					<%= f.text_field :gender %>
+				</div>
+
+				<div class="small-6 large-4 columns">
+					<%= f.label :business_unit %>
+					<%= f.text_field :business_unit %>
+				</div>
+			</div>
+	</fieldset>
+
+<h3>Activity 1: Group Discussion</h3>
+<h4>This activity shows the students ability to discuss topics in a group setting.</h4>
+
+<div>
+	<%= f.label :observation %>
+	<%= f.text_area :observation %>
+</div>
+
+<table class="responsive">
+  <tbody>
+    <tr>
+      <th width="20%">Capabilities:</th>
+      <th width="5%">1</th>
+      <th width="5%">2</th>
+      <th width="5%">3</th>
+      <th width="5%">4</th>
+      <th width="5%">5</th>
+    </tr>
+    <tr>
+      <td>The student speaks confidently with their peers.</td>
+      <td><%= f.radio_button :score_1, "1" %></td>
+      <td><%= f.radio_button :score_1, "2" %></td>
+      <td><%= f.radio_button :score_1, "3" %></td>
+      <td><%= f.radio_button :score_1, "4" %></td>
+      <td><%= f.radio_button :score_1, "5" %></td>
+    </tr>
+    <tr>
+      <td>The student can voice their own opinions.</td>
+      <td><%= f.radio_button :score_2, "1" %></td>
+      <td><%= f.radio_button :score_2, "2" %></td>
+      <td><%= f.radio_button :score_2, "3" %></td>
+      <td><%= f.radio_button :score_2, "4" %></td>
+      <td><%= f.radio_button :score_2, "5" %></td>
+
+    </tr>
+    <tr>
+      <td>The student lets other speak in the group.</td>
+      <td><%= f.radio_button :score_3, "1" %></td>
+      <td><%= f.radio_button :score_3, "2" %></td>
+      <td><%= f.radio_button :score_3, "3" %></td>
+      <td><%= f.radio_button :score_3, "4" %></td>
+      <td><%= f.radio_button :score_3, "5" %></td>
+    </tr>
+    <tr>
+      <td>The student is willing to change their view on new information.</td>
+      <td><%= f.radio_button :score_4, "1" %></td>
+      <td><%= f.radio_button :score_4, "2" %></td>
+      <td><%= f.radio_button :score_4, "3" %></td>
+      <td><%= f.radio_button :score_4, "4" %></td>
+      <td><%= f.radio_button :score_4, "5" %></td>
+    </tr>
+  </tbody>
+</table>
+<%= f.submit 'Update', class: "button" %> or <%= link_to 'Cancel', students_path %>
+
+<% end %>
