@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
 	end
 
 	def create
-		@student = current_user.students.new permitted_attributes
+		@student = Student.new permitted_attributes
 		if @student.save
 			redirect_to student_path(@student.id), :notice => "Student successfully created"
 		else
