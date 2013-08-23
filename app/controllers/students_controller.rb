@@ -10,9 +10,6 @@ class StudentsController < ApplicationController
 		@student = Student.new
 	end
 
-	def edit
-	end
-
 	def score
 		@student = Student.find(params[:id])
 		scores = [@student.score_1, @student.score_2, @student.score_3, @student.score_4]
@@ -28,9 +25,9 @@ class StudentsController < ApplicationController
 	end
 
 	def create
-		@student = Student.new permitted_attributes
+		@student = current_user.students.new permitted_attributes
 		if @student.save
-			redirect_to student_path(@student.id)
+			redirect_to student_path(@student.id), :notice => "Student successfully created"
 		else
 			render 'new'
 		end

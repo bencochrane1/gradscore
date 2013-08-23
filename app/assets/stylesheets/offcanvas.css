@@ -13,7 +13,7 @@ canvas { background: #23B9D2; }
 a.sidebar-button { margin-top: 8px; margin-bottom: 6px; display: inline-block;}
 a.sidebar-button img { margin-top: -6px; width: 23px; }
 a.sidebar-button h4 { font-size: 22px !important; display: inline !important; margin-left: 10px; line-height: 1; color: #fff; font-weight: bold !important; }
-#sidebar { position: absolute; background: #333; height: 100%; padding: 0px; -webkit-box-shadow: inset -2px 0px 8px -1px #111111; box-shadow: inset -2px 0px 8px -1px #111111; padding-top: 10px; }
+#sidebar { position: absolute; background: #333; height: 100%; padding: 0px; -webkit-box-shadow: inset -2px 0px 8px -1px #0E7AC4; box-shadow: inset -2px 0px 8px -1px #0E7AC4; padding-top: 10px; }
 #sidebar h5 a { font-size: 20px !important; }
 #sidebar hr { margin: 8px 0 20px 0; border-color: #444444 !important;}
 #sidebar h6,#sidebar h5  { color:#727272; text-transform: uppercase; margin-bottom: 0px; font-family:'Proxima Nova Condensed', 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif; }

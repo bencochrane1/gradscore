@@ -1,5 +1,8 @@
 class Student < ActiveRecord::Base
 
+
+	belongs_to :user
+
 	def score
 		@student = Student.find(params[:id])
 		scores = [@student.score_1, @student.score_2, @student.score_3, @student.score_4]
