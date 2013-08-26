@@ -5,7 +5,8 @@ class Student < ActiveRecord::Base
 
 
 	def average_score
-  [score_1, score_2, score_3, score_4].inject{ |sum, el| sum + el }.to_f / [score_1, score_2, score_3, score_4].size
+		return unless score_1 && score_2 && score_3 && score_4
+  	(score_1 + score_2 + score_3 + score_4).to_f / 4
 	end
 
 end
