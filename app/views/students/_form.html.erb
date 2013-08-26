@@ -37,12 +37,12 @@
 			<div>
 				<div class="small-2 large-4 columns">
 					<%= f.label :assessment_date %>
-					<%= f.text_field :assessment_date, placeholder: "15/04/2013", id: "customDropdown" %>
+					<%= f.text_field :assessment_date, class: "datepicker" %>
 				</div>
 
-				<div class="small-4 large-4 columns">
+				<div class="small-4 large-4 columns medium">
 					<%= f.label :gender %>
-					<%= f.text_field :gender %>
+					<%= f.select :gender, gender_options, prompt: "Select", class: "medium hidden-field" %>
 				</div>
 
 				<div class="small-6 large-4 columns">
