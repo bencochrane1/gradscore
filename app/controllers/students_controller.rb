@@ -10,9 +10,9 @@ class StudentsController < ApplicationController
 		end
 	end
 
-	def send_as_csv
-		StudentMailer.csv_mail(params[:email_address]).deliver
-	end
+	# def send_as_csv
+	# 	StudentMailer.csv_mail(params[:email_address]).deliver
+	# end
 
 	def new
 		@student = Student.new
