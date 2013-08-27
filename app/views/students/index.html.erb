@@ -1,40 +1,81 @@
-<h2>Previous Grad Assessments</h2><br/>
 
-<div class="row">
-  <div class="large-12 columns"> 
-    <div class="row">
-      <div class="large-6 columns">
-				<%= form_tag search_path do %>
-					<div class="panel">
-						<p>Search for a Graduate previously assessed:</p>
-						<div class="row collapse">
-							<%= text_field_tag 'search' %>
-							<%= submit_tag 'Search', class: "postfix button expand" %>
+
+
+
+<% if current_user %>
+
+	<h2>Previous Grad Assessments</h2><br/>
+
+	<div class="row">
+	  <div class="large-12 columns"> 
+	    <div class="row">
+	      <div class="large-6 columns">
+					<%= form_tag search_path do %>
+						<div class="panel">
+							<p>Search for a Graduate previously assessed:</p>
+							<div class="row collapse">
+								<%= text_field_tag 'search' %>
+								<%= submit_tag 'Search', class: "postfix button expand" %>
+							</div>
 						</div>
-					</div>
-				<% end %>
-			</div>
+					<% end %>
+				</div>
 
+				
+			</div>
+		</div>
+
+		<div class="large-12 columns"> 
+			<div class="row">
+				<div class="large-6 columns">
+					<div class="row">
+			  <div class="small-2 large-4 columns"><%= link_to 'Download to Excel', '/students.csv', class: "button" %><br/></div>
+			  <div class="small-4 large-4 columns"> </div>
+			  <div class="small-6 large-4 columns"><%= link_to 'Assess a New Graduate', new_student_path, class: "button" %><br/></div>
+
+			</div>
+		</div>
+	</div>
+			
+			<br/><br/>
+			<%= render 'student_list' %>
 			
 		</div>
 	</div>
 
-	<div class="large-12 columns"> 
-		<div class="row">
-			<div class="large-6 columns">
-				<div class="row">
-		  <div class="small-2 large-4 columns"><%= link_to 'Download to Excel', '/students.csv', class: "button" %><br/></div>
-		  <div class="small-4 large-4 columns"> </div>
-		  <div class="small-6 large-4 columns"><%= link_to 'Assess a New Graduate', new_student_path, class: "button" %><br/></div>
+<% else %>
 
+	<h1>Previous Graduate Assessment Examples</h1>	
+	<br/>
+	<div class="row">
+    <div class="large-12 columns"> 
+    	<fieldset>
+  			<legend><h3 class="hide-for-small">Example Assessment List</h3></legend>
+          <%= image_tag "previous-assessments.png" %><br>
+      </fieldset>    
 		</div>
-	</div>
-</div>
-		
-		<br/><br/>
-		<%= render 'student_list' %>
-		
-	</div>
+
+		<div class="large-12 columns"> 
+	    <div class="panel">
+	      <h2 class="hide-for-small">GradScore<hr/></h2>
+	      <h4>The simplest way to assess and select graduate candidates for your company.<hr/></h4>
+	    	<h5 class="subheader">GradScore lets graduate assessors record observations and assess candidates on various activities all on a tablet PC.</h5>
+	    </div>
+
+    <div class="large-12 columns">
+      
+      	<div class="row">
+          <div class="small-3 small-centered columns">
+            <h5>Sign Up</h5>
+            <h6 class="subheader">Create a new account and start assessing and recording graduate observations today.</h6>
+            <%= link_to 'Create a free account', new_user_registration_path, class: "button" %>
+          </div>
+        </div><br/><br/>
+    </div>
+
+
+  </div>
 </div>
 
 
+<% end %>
