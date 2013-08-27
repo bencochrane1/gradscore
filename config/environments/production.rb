@@ -25,6 +25,7 @@ Gradscore::Application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  config.assets.initialize_on_precompile = false
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -44,6 +45,9 @@ Gradscore::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+
+
+
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]

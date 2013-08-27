@@ -1,12 +1,12 @@
 <table class="responsive">
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Assessment Date</th>
-      <th>Gender</th>
-      <th>Business Unit</th>
-      <th>Score</th>
+      <th><span data-tooltip class="has-tip" title="Click to sort by First Name"><%= link_to "First Name", sort: "first_name" %></span></th>
+      <th><span data-tooltip class="has-tip" title="Click to sort by Last Name"><%= link_to "Last Name", sort: "last_name" %></th>
+      <th><span data-tooltip class="has-tip" title="Click to sort by Assessment Date Name"><%= link_to "Assessment Date", sort: "assessment_date" %></th>
+      <th><span data-tooltip class="has-tip" title="Click to sort by Gender"><%= link_to "Gender", sort: "gender" %></th>
+      <th><span data-tooltip class="has-tip" title="Click to sort by Business Unit"><%= link_to "Business Unit", sort: "business_unit" %></th>
+      <th><span data-tooltip class="has-tip" title="Click to sort by Assessment Score"><%= link_to "Score", sort: "score" %></th>
       <th> </th>
       <th> </th>
       <th> </th>
@@ -28,6 +28,4 @@
     <% end %>
   </tbody>
 </table>
-
-
 

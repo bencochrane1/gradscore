@@ -1,20 +1,40 @@
 <h2>Previous Grad Assessments</h2><br/>
 
-<%= form_tag search_path do %>
-	<div class="panel">
-		<p>Search for a Graduate previously assessed:</p>
-		<div class="row collapse">
-			<%= text_field_tag 'search' %>
-			<%= submit_tag 'Search', class: "postfix button expand" %>
+<div class="row">
+  <div class="large-12 columns"> 
+    <div class="row">
+      <div class="large-6 columns">
+				<%= form_tag search_path do %>
+					<div class="panel">
+						<p>Search for a Graduate previously assessed:</p>
+						<div class="row collapse">
+							<%= text_field_tag 'search' %>
+							<%= submit_tag 'Search', class: "postfix button expand" %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+
+			
 		</div>
 	</div>
-<% end %>
 
+	<div class="large-12 columns"> 
+		<div class="row">
+			<div class="large-6 columns">
+				<div class="row">
+		  <div class="small-2 large-4 columns"><%= link_to 'Download to Excel', '/students.csv', class: "button" %><br/></div>
+		  <div class="small-4 large-4 columns"> </div>
+		  <div class="small-6 large-4 columns"><%= link_to 'Assess a New Graduate', new_student_path, class: "button" %><br/></div>
 
-<%= link_to 'Assess a New Student', new_student_path, class: "button" %>
-<br/><br/>
-
-<%= render 'student_list' %>
-
+		</div>
+	</div>
+</div>
+		
+		<br/><br/>
+		<%= render 'student_list' %>
+		
+	</div>
+</div>
 
 

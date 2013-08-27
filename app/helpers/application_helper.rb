@@ -1,6 +1,6 @@
 module ApplicationHelper
 
 	def gender_options
-		[['Male', 'm'],['Female', 'f']]
+		[['Male', 'Male'],['Female', 'Female']]
 	end
 end

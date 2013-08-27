@@ -3,7 +3,15 @@ class StudentsController < ApplicationController
 	before_action :find_student, :only => [:edit, :update]
 
 	def index
-		@students = Student.all
+		@students = Student.order(params[:sort])
+		respond_to do |format|
+			format.html
+			format.csv { render text: @students.to_csv }
+		end
+	end
+
+	def send_as_csv
+		StudentMailer.csv_mail(params[:email_address]).deliver
 	end
 
 	def new

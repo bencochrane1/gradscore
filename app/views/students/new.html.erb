@@ -1,5 +1,48 @@
-<h1>Assess a new student</h1>
-
-<%= render 'form' %>
 
 
+<% if current_user %>
+	<h1>Assess a new graduate</h1>	
+	<%= render 'form' %>
+
+<% else %>
+
+
+
+
+
+	<h1>Graduate Assessment Example</h1>	
+	<br/>
+	<div class="row">
+    <div class="large-12 columns"> 
+    	<fieldset>
+  			<legend><h3>Example Graduate Assessment</h3></legend>
+          <%= image_tag "assessment.jpg", class: "hide-for-small" %><br>
+          <%= image_tag "assessment.jpg", class: "show-for-small" %><br>
+          <!-- <h3 class="show-for-small">GradScore<hr/></h3> -->
+      </fieldset>    
+		</div>
+
+		<div class="large-12 columns"> 
+	    <div class="panel">
+	      <h2 class="hide-for-small">GradScore<hr/></h2>
+	      <h4>The simplest way to assess and select graduate candidates for your company.<hr/></h4>
+	    	<h5 class="subheader">GradScore lets graduate assessors record observations and assess candidates on various activities all on a tablet PC.</h5>
+	    </div>
+
+    <div class="large-12 columns">
+      
+      	<div class="row">
+          <div class="small-3 small-centered columns">
+            <h5>Assess a new graduate</h5>
+            <h6 class="subheader">Create a new student entry and assessment.</h6>
+            <%= link_to 'Create a free account', new_user_registration_path, class: "button" %>
+          </div>
+        </div><br/><br/>
+    </div>
+
+
+  </div>
+</div>
+
+
+<% end %>
