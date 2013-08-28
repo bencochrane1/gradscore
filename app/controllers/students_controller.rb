@@ -63,7 +63,7 @@ class StudentsController < ApplicationController
 	end
 
 	def permitted_attributes
-		params.require(:student).permit(:first_name, :last_name, :email, :gender, :business_unit, :score_1, :score_2, :score_3, :score_4, :score, :assessment_date, :observation)
+		params.require(:student).permit(:first_name, :last_name, :email, :gender, :business_unit, :score_1, :score_2, :score_3, :score_4, :score, :assessment_date, :assessment_date, :observation)
 	end
 
 end
